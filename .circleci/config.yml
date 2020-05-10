@@ -4,5 +4,4 @@ orbs:
 workflows:
   build_and_push_image:
     jobs:
-      - docker-publish/build-and-push-image:
-          repo: freeswitch/freeswitch
+       - docker-publish/publish
