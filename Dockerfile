@@ -20,7 +20,13 @@ COPY entrypoint.sh /home/entrypoint.sh
 
 COPY conf/vars.xml /usr/local/freeswitch/conf/vars.xml
 
+RUN rm -Rf /usr/local/freeswitch/conf/dialplan/*
+
 RUN rm /usr/local/freeswitch/conf/sip_profiles/external-ipv6.xml && rm /usr/local/freeswitch/conf/sip_profiles/internal-ipv6.xml && rm /usr/local/freeswitch/conf/sip_profiles/external-ipv6/*; exit 0
+
+COPY conf/dialplan/tiniyo-inbound.xml /usr/local/freeswitch/conf/dialplan/tiniyo-inbound.xml
+
+COPY conf/autoload_configs/event_socket.conf.xml /usr/local/freeswitch/conf/autoload_configs/event_socket.conf.xml
 
 RUN ln -s /usr/local/freeswitch/bin/freeswitch /usr/local/bin/
 

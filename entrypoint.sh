@@ -24,4 +24,4 @@ echo "[ENTRYPOINT] - Starting FreeSWITCH"
 
 cat /usr/local/freeswitch/conf/vars.xml ||:
 
-stdbuf -i0 -o0 -e0 /usr/local/bin/freeswitch -nc
+stdbuf -i0 -o0 -e0 /usr/local/bin/freeswitch -c
