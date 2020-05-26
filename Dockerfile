@@ -18,9 +18,9 @@ RUN git clone https://github.com/signalwire/freeswitch.git -bv1.10 freeswitch
 
 WORKDIR /usr/local/src/freeswitch
 
-RUN ./bootstrap.sh -j && ./configure && make && make install
-
 COPY modules.conf /usr/local/src/freeswitch
+
+RUN ./bootstrap.sh -j && ./configure && make && make install
 
 COPY entrypoint.sh /home/entrypoint.sh
 
